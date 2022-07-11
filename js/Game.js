@@ -94,10 +94,9 @@ class Game {
           this.handleGrass(index);
 
           // Changing camera position in y direction
- 
-          camera.position.x=width/2
           camera.position.y= animals[index-1].position.y
-        }
+
+         }
       }
 
       // handling keyboard events
@@ -122,18 +121,18 @@ class Game {
 
   handleGrass(index){
 
-  //  animals[index - 1].overlap(grass, function(collector, collected) {
-  //    player.score += 21;
-  //    player.update();
-  //   collected.remove();
-  //  });
-
-
-    animals[index - 1].overlap(grass, function(collected, collector) {
-        player.score += 21;
+     animals[index - 1].overlap(grass, function(collector, collected) {
+       player.score += 21;
        player.update();
-       collector.remove();
+       collected.remove();
      });
+
+
+  //   animals[index - 1].overlap(grass, function(collected, collector) {
+  //     player.score += 21;
+  //     player.update();
+  //     collector.remove();
+  //   });
 
 
   //   animals[index].overlap(grass, function(collector, collected) {
